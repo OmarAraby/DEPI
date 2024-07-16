@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Wellness Center Membership</title>
+    </head>
+
+    <body>
+        <div class="container" id="form-container">
+            <div class="logo">
+                <img
+                    src="the-wellness-membership.jpg"
+                    alt="Wellness Center Logo"
+                />
+                <h1>Wellness Center Membership Registration Form</h1>
+            </div>
+
+            <form id="form">
+                <div class="form">
+                    <label for="fullName"> Full Name</label>
+
+                    <div class="input-names">
+                        <input
+                            type="text"
+                            name="firstName"
+                            placeholder="First"
+                            required
+                        />
+                        <input
+                            type="text"
+                            name="lastName"
+                            placeholder="Last"
+                            required
+                        />
+                    </div>
+                </div>
+                <div class="form">
+                    <label for="birthDate">Birth Date</label>
+                    <input type="date" name="birthDate" required />
+                </div>
+                <div class="form">
+                    <label for="email">Email Address</label>
+                    <input type="email" name="email" required />
+                </div>
+                <div class="form">
+                    <label for="insurance">Insurance</label>
+                    <input type="text" name="insurance" required />
+                </div>
+                <div class="form terms">
+                    <input type="checkbox" name="termsOfService" required />
+                    <label for="termsOfService">
+                        I agree to the
+                        <a href="#"> terms of service.</a>
+                    </label>
+                </div>
+                <!--  <div class="form">
+                    <div class="g-recaptcha" data-sitekey="your-site-key"></div>
+                    <br />
+                </div> -->
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <script
+            src="https://www.google.com/recaptcha/api.js"
+            async
+            defer
+        ></script>
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>
