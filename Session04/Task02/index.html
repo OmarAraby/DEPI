@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <title>Task02</title>
+    </head>
+    <body>
+        <div class="container">
+            <form id="loginForm" method="POST">
+                <div class="form">
+                    <label for="email"> Email Address </label>
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="Enter your Email"
+                    />
+                </div>
+                <div class="form">
+                    <label for="password"> Password</label>
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        placeholder="Enter your Password"
+                    />
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+            <div class="msg">
+                <h1>Welcome, <span id="userName"></span>!</h1>
+                <p>Your amount is: <span id="userAmount"></span></p>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="scripts.js"></script>
+    </body>
+</html>
