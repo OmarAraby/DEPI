@@ -7,7 +7,7 @@ export default function Posts({ posts }) {
       {posts.map((post, index) => {
         return (
           <div key={index} className="col-md-3">
-            <Post post={post} />
+            <Post post={post} key={post.id} />
           </div>
         );
       })}

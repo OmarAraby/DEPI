@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function AddPost() {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+
   return (
     <>
       <form>
@@ -19,7 +22,7 @@ export default function AddPost() {
           <label htmlFor="exampleInputText1" className="form-label">
             Description
           </label>
-          <input
+          <textarea
             type="textarea"
             className="form-control"
             id="exampleInputText1"

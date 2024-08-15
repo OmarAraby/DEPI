@@ -1,12 +1,13 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import Home from "./components/Home/Home";
 import PageNotFound from "./components/Home/PageNotFound";
 import AddPost from "./components/Posts/AddPost";
+import PostDetail from "./components/Posts/PostDetail";
+import EditPost from "./components/Posts/EditPost";
 
 function App() {
   let router = createBrowserRouter([
@@ -15,6 +16,9 @@ function App() {
       element: <Layout />,
       children: [
         { index: true, element: <Home /> },
+        { path: ":id", element: <PostDetail /> },
+        { path: "/edit/:id", element: <EditPost /> },
+
         { path: "add-post", element: <AddPost /> },
         { path: "*", element: <PageNotFound /> },
       ],

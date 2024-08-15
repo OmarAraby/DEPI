@@ -3,7 +3,7 @@ import React from "react";
 export default function Footer() {
   return (
     <>
-      <footer className="text-center bg-body-tertiary fixed-bottom">
+      <footer className="text-center bg-body-tertiary ">
         {/* Grid container */}
         <div className="container pt-4">
           {/* Section: Social media */}

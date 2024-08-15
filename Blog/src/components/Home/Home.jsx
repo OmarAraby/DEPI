@@ -20,7 +20,10 @@ export default function Home() {
   }
   return (
     <>
-      <div> HoMe</div>
+      <div className="text-center">
+        {" "}
+        <h1>latest Posts</h1>
+      </div>
       {isPostsEmpty() ? <Loading /> : <Posts posts={posts} />}
     </>
   );
