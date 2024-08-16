@@ -7,17 +7,7 @@ import PostsPagination from "../Pagination/PostsPagination";
 import { Context } from "../Context/Context";
 
 export default function Home() {
-  const [posts, setPosts] = useState([]);
-  const { data } = useContext(Context);
-
-  async function getPosts() {
-    let { data } = await axios.get("https://dummyjson.com/posts");
-    console.log(data.posts);
-    setPosts(data.posts);
-  }
-  useEffect(() => {
-    getPosts();
-  }, []);
+  const { posts, setOrderBy, handlingOdring } = useContext(Context);
 
   function isPostsEmpty() {
     return posts.length == 0;
@@ -26,10 +16,44 @@ export default function Home() {
     <>
       <div className="text-center">
         <AllTags />
+        <div className="dropdown">
+          <button
+            className="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Dropdown button
+          </button>
+          <ul className="dropdown-menu">
+            <a>
+              <li
+                onClick={() => {
+                  setOrderBy("asc");
+                  handlingOdring("asc");
+                }}
+              >
+                Asending
+              </li>
+            </a>
+            <a>
+              <li
+                onClick={() => {
+                  setOrderBy("desc");
+                  handlingOdring("desc");
+                }}
+              >
+                Descinding
+              </li>
+            </a>
+          </ul>
+        </div>
+
         <h1>latest Posts</h1>
       </div>
+
       {isPostsEmpty() ? <Loading /> : <Posts posts={posts} />}
-      {/* <PostsPagination /> */}
+      <PostsPagination />
     </>
   );
 }

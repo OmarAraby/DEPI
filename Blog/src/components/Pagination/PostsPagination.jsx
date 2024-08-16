@@ -5,7 +5,8 @@ import { Context } from "../Context/Context";
 
 function PostsPagination() {
   const { totalCounts, postsPaginationClick } = useContext(Context);
-  const [pageCount, setPageCount] = useState(0);
+  const [pageCount, setPageCount] = useState(20);
+
   const handlePage = (e) => {
     postsPaginationClick(e.selected + 1);
   };
@@ -15,7 +16,6 @@ function PostsPagination() {
   console.log("Total Counts:", totalCounts);
   return (
     <div>
-      {" "}
       <div className="">
         <ReactPaginate
           breakLabel="..."

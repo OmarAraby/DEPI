@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import Post from "./Post";
 import PostsPagination from "../Pagination/PostsPagination";
+import { Context } from "../Context/Context";
 
 export default function Posts({ posts }) {
   return (
@@ -14,7 +15,6 @@ export default function Posts({ posts }) {
           );
         })}
       </div>
-      <PostsPagination />
     </>
   );
 }
