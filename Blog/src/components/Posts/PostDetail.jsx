@@ -1,12 +1,26 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import useFetch from "../Hooks/useFetch";
+import { api } from "../Utils/axios";
 
 export default function PostDetail() {
   const { id } = useParams();
+  const navigate = useNavigate();
   console.log(id);
   const [post, loading] = useFetch(id);
   console.log(post);
+
+  const handleDelete = async (e) => {
+    e.preventDefault();
+    try {
+      let response = await api.delete(`${id}`, post);
+      console.log(response);
+
+      navigate(`/`);
+    } catch (error) {
+      console.error("Error updating post:", error);
+    }
+  };
 
   return (
     <>
@@ -27,7 +41,10 @@ export default function PostDetail() {
                   <i className="fas fa-edit me-1"></i>
                   Edit Post
                 </Link>
-                <Link className="btn btn-outline-danger  ms-4" to={``}>
+                <Link
+                  className="btn btn-outline-danger  ms-4"
+                  onClick={handleDelete}
+                >
                   <i className="fas fa-trash me-1"></i>
                   Delete Post
                 </Link>
@@ -35,11 +52,11 @@ export default function PostDetail() {
 
               <div className="">
                 <button className="btn btn-outline-primary m-2">
-                  <i class="fa-regular fa-thumbs-up"> </i>
+                  <i className="fa-regular fa-thumbs-up"> </i>
                   <span>{post.reactions?.likes}</span>
                 </button>
                 <button className="btn btn-outline-primary m-2">
-                  <i class="fa-regular fa-thumbs-down"></i>
+                  <i className="fa-regular fa-thumbs-down"></i>
                   <span>{post.reactions?.dislikes}</span>
                 </button>
               </div>

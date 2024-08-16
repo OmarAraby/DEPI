@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { api } from "../Utils/axios.js";
 
-function useFetch(params = "", query = "") {
+function useFetch(params = "", query = "", tag = "") {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 

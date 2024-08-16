@@ -31,8 +31,10 @@ function EditPost() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await api.put(`${id}`, post);
-      navigate(`${id}`);
+      let response = await api.put(`${id}`, post);
+      console.log(response);
+
+      navigate(`/${id}`);
     } catch (error) {
       console.error("Error updating post:", error);
     }
