@@ -33,6 +33,12 @@ export default function PostDetail() {
               <p className="text-muted mb-0">
                 <small>Views: {post.views}</small>
               </p>
+              <p className="text-muted mb-0">
+                <small>Views: {post.views}</small>
+              </p>
+              {/* <p className="text-muted mb-0">
+                <Tag post={post.id} />
+              </p> */}
               <div className="text-muted mb-0">
                 <Link
                   className="btn btn-outline-secondary  ms-4"

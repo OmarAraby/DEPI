@@ -19,15 +19,15 @@ export default function Navbar() {
               </li>
 
               <li className="nav-item">
-                <NavLink className="nav-link" to={"about"}>
-                  About
+                <NavLink className="nav-link" to={"tags"}>
+                  Tags
                 </NavLink>
               </li>
 
               <li className="nav-item"></li>
             </ul>
           </div>
-          <button type="button" className="btn btn-info">
+          <button type="button" className="btn btn-outline-secondary">
             <NavLink className="nav-link" to={"add-post"}>
               Add Post
             </NavLink>
